@@ -24,6 +24,8 @@ spec:
               name: udagram-067328141418-env
           - secretRef:
               name: udagram-db-secret
+          - secretRef:
+              name: aws-cre
         resources:
           requests:
             memory: "64Mi"
