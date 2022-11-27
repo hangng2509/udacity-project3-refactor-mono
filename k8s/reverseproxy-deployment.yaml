@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: 014091804/reverseproxy:v3
+      - image: 014091804/reverseproxy:latest
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
