@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: 014091804/udagram-frontend:v2
+      - image: 014091804/udagram-frontend:v3
         name: frontend
         ports:
           - containerPort: 80  
