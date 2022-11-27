@@ -19,60 +19,18 @@ spec:
         name: api-user
         ports:
           - containerPort: 8080
-        env:
-        - name: URL
-          valueFrom:
-            configMapKeyRef:
+        envFrom:
+          - configMapRef:
               name: udagram-067328141418-env
-              key: URL
-        - name: AWS_BUCKET
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: AWS_BUCKET
-        - name: AWS_PROFILE
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: AWS_PROFILE
-        - name: AWS_REGION
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: AWS_REGION
-        - name: JWT_SECRET
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: JWT_SECRET
-        - name: POSTGRESS_DB
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: POSTGRESS_DB
-        - name: POSTGRESS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: udagram-067328141418-env
-              key: POSTGRESS_HOST
-        - name: POSTGRESS_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: udagram-db-secret
-              key: POSTGRESS_PASSWORD
-        - name: POSTGRESS_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: udagram-db-secret
-              key: POSTGRESS_USERNAME 
-        imagePullPolicy: Always  
+          - secretRef:
+              name: udagram-db-secret 
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
-            cpu: "500m"                  
+            memory: "128Mi"
+            cpu: "500m"                   
         volumeMounts:
         - name: aws-cre
           mountPath: "/root/.aws/"
