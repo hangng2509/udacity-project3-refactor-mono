@@ -7,6 +7,6 @@ data:
   JWT_SECRET: testing
   POSTGRES_DB: postgres
   POSTGRES_HOST: postgres.cnbevceaf5uy.us-east-1.rds.amazonaws.com 
-  URL: http://aa2e603bc4bdb42d79fe8cf7dac5065f-12371101.us-east-1.elb.amazonaws.com:8100
+  URL: http://a5d8fa5caa0154a669079dfa62c889d4-185408978.us-east-1.elb.amazonaws.com:8100
 metadata:
   name: udagram-067328141418-env
