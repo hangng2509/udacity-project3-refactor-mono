@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: reverseproxy
+      image: reverseproxy:latest
       ports:
           - 8080:8080
       restart: always
@@ -9,7 +9,7 @@ services:
         - api-user
         - api-feed
   api-user:
-    image: udagram-api-user
+    image: udagram-api-user:latest
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
@@ -19,9 +19,9 @@ services:
       AWS_PROFILE: $AWS_PROFILE 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://localhost:8100"
+      URL: "http://a5d8fa5caa0154a669079dfa62c889d4-185408978.us-east-1.elb.amazonaws.com:8100"
   api-feed:
-    image: udagram-api-feed
+    image: udagram-api-feed:latest
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -33,8 +33,8 @@ services:
       AWS_PROFILE: $AWS_PROFILE 
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://localhost:8100"
+      URL: "http://a5d8fa5caa0154a669079dfa62c889d4-185408978.us-east-1.elb.amazonaws.com:8100"
   frontend:
-    image: udagram-frontend:local
+    image: udagram-frontend:latest
     ports:
       - "8100:80"
