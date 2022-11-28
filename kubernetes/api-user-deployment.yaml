@@ -73,12 +73,12 @@ spec:
           limits:
             memory: "2048Mi"
             cpu: "500m"              
-        volumeMounts:
-        - name: aws-cre
-          mountPath: "/root/.aws/"
-          readOnly: true 
-      restartPolicy: Always              
-      volumes:
-      - name: aws-cre
-        secret:
-          secretName: aws-cre      
+      #   volumeMounts:
+      #   - name: aws-cre
+      #     mountPath: "/root/.aws/"
+      #     readOnly: true 
+      # restartPolicy: Always              
+      # volumes:
+      # - name: aws-cre
+      #   secret:
+      #     secretName: aws-cre      
